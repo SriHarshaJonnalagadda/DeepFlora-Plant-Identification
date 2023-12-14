@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+</head>
+<body>
+    <div class="headerstyle"></div>
+    <div class="logo"></div>
+    <span class="topic">Identification of Different Medicine Plants</span>
+    <div class="sihlogo"></div>
+    <div class="container"></div>
+    <h1>Identification of Different Medicinal Plants </h1>
+    <span class="topic2">Raw materials through Image Processing</span>
+    <span class="topic3">Using Machine Learning Algorithms</span>   
+    <div class="card1"></div>
+    <div class="card2"></div>
+    <div class="card3"></div>
+    <div class="card4"></div>
+    <div class="container1"></div>
+    <video width="560" height="315" src="static/Hackathon   .MP4" type="video/mp4"  autoplay muted></video>
+    <span class="realistic-marker-highlight">Sample Video</span>
+    <svg xmlns="//www.w3.org/2000/svg" version="1.1" class="svg-filters" style="display:none;">
+        <defs>
+          <filter id="marker-shape">
+            <feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+          </filter>
+        </defs>
+    </svg>
+    <a href="{{ url_for('upload_page') }}">
+        <button type="submit">Let's Begin</button>
+    </a>  
+   
+
+    <span class="realistic-marker-highlight1">Abstract</span>
+    <svg xmlns="//www.w3.org/2000/svg" version="1.1" class="svg-filters" style="display:none;">
+        <defs>
+          <filter id="marker-shape">
+            <feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+          </filter>
+        </defs>
+      </svg>
+    <p class="intro">The rapid growth of the herbal medicine industry has emphasized the need for accurate and efficient methods to identify medicinal plants and their raw materials. This project proposes a novel approach leveraging the power of Image Processing and Machine Learning techniques to address this challenge. The primary objective is to develop a robust system capable of accurately recognizing and classifying various medicinal plants and their respective raw materials based on visual cues extracted from images.
+    </p>
+    <p class="intro1"> The project workflow begins with the acquisition of high-resolution images of different plant specimens and raw materials. Preprocessing techniques are applied to enhance the quality and standardize the format of the acquired images. Feature extraction methodologies, such as texture, color, and shape analysis, are employed to extract discriminative characteristics from the images, forming a comprehensive dataset.
+    </p>
+    <p class="intro2"> A diverse range of Machine Learning algorithms, including Convolutional Neural Networks (CNNs), Support Vector Machines (SVMs), and Random Forests, are investigated for their suitability in handling this classification task. Extensive experimentation and comparative analysis will be conducted to identify the most effective algorithm, taking into account factors such as accuracy, processing speed, and scalability.
+        Furthermore, the system will be designed to accommodate real-time applications, enabling quick and accurate identification in practical scenarios. A user-friendly interface will be developed to facilitate easy interaction with the system, allowing users to input images for analysis and receive prompt feedback.
+    </p>
+    <p class="intro3">The project's potential impact is significant, as it addresses a crucial need in the herbal medicine industry by providing a reliable and automated means of identifying medicinal plants and their raw materials. This innovation holds promise for improving product quality, ensuring authenticity, and promoting sustainable practices in the herbal medicine sector.
+    </p>
+
+</body>
+
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("static/bgimage (2).jpg"); /* Set your background image here */
+    background-size: cover;
+    background-position: center;
+  }
+
+.container {
+    top: 280px;
+    left: 20px;
+    background: rgba(64, 104, 59, 0.81);
+    width: 565px;
+    padding: 90px;
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.5s;
+    display: inline-block;
+}
+
+.headerstyle{
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(rgb(37, 89, 52), rgba(107,199,132,1));
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+  
+.logo {
+    width: 200px;
+    height: 60px;
+    background: url("static/logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 20px;
+    left: 48px;
+    overflow: hidden;
+}
+
+.topic {
+    width: 100%;
+    color: rgba(34,79,52,1);
+    position: absolute;
+    top: 25px;
+    left: 340px;
+    font-family: Rufina;
+    font-weight: Bold;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+}
+
+.sihlogo {
+    width: 140px;
+    height: 80px;
+    background: url("static/SIH.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 8px;
+    right: 48px;
+    overflow: hidden;
+} 
+h1 {
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 300px;
+    left: 50px;
+    font-family: Quantico;
+    font-weight: Regular;
+    font-size: 38px;
+    opacity: 1;
+    text-align: left; 
+}
+
+h2 {
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 730px;
+    left: 590px;
+    font-family: Quantico;
+    font-weight: Regular;
+    font-size: 38px;
+    opacity: 1;
+    text-align: left; 
+}
+.topic2 {
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 350px;
+    left: 50px;
+    font-family: Quantico;
+    font-weight: Regular;
+    font-size: 35px;
+    opacity: 1;
+    text-align: left; 
+}
+.topic3 {
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 400px;
+    left: 50px;
+    font-family: Quantico;
+    font-weight: Regular;
+    font-size: 35px;
+    opacity: 1;
+    text-align: left; 
+}
+
+.card1 {
+    top: 200px;
+    left: 800px;
+    width: 230px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-image: url(static/image1.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    transition: transform 0.5s;
+
+}
+.card2 {
+    top: 200px;
+    left: 1100px;
+    width: 230px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-image: url(static/image2.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    transition: transform 0.5s;
+
+}
+.card3 {
+    top: 450px;
+    left: 800px;
+    width: 230px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-image: url("static/image3(1).jpeg");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    transition: transform 0.5s;
+
+}
+.card4 {
+    top: 450px;
+    left: 1100px;
+    width: 230px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-image: url("static/image(2).jpeg");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    transition: transform 0.5s;
+
+}
+
+.card1:hover {
+    transform: translateY(-10px);
+}
+.card2:hover {
+    transform: translateY(-10px);
+}
+.card3:hover {
+    transform: translateY(-10px);
+}
+.card4:hover {
+    transform: translateY(-10px);
+}
+
+.container:hover {
+    transform: translateX(-10px);
+    transform: translateY(-10px);
+}
+
+/*video {
+    width: 50%;
+    height: 100%;
+    left: 360px;
+    top: 650px;
+    position: absolute;
+    border-radius: 0%;
+    border-width: 100px;
+}*/
+
+
+.container1 {
+    top: 650px;
+    left: 363px;
+    background: rgba(64, 104, 59, 0.81);
+    width: 300px;
+    padding: 190px;
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.5s;
+    display: inline-block;
+}
+video {
+    top: 853px;
+    left: 410px;
+    position: absolute;
+    padding: 6px;
+    border: 9px outset  rgba(79, 134, 55, 0.81);
+}
+
+button {
+    display: block;
+    background-color: rgba(64, 125, 35, 0.708);
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #80a656;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 25px auto;
+    max-width: 130px;
+    font-size: 16px;
+    top: 1230px;
+    left: 650px;
+    position: absolute;
+
+}
+
+.abstract {
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 1700px;
+    left: 630px;
+    font-family: Quantico;
+    font-weight: Regular;
+    font-size: 38px;
+    opacity: 1;
+    text-align: left; 
+}
+
+.intro {
+    width: 90%;
+    height: 100%;
+    color: #fff;
+    position: absolute;
+    top: 1450px;
+    left: 70px;
+    font-size: 23px;
+    opacity: 1;
+    text-align: left; 
+    text-align: justify;
+}
+
+.intro1 {
+    width: 90%;
+    height: 100%;
+    color: #fff;
+    position: absolute;
+    top: 1600px;
+    left: 70px;
+    font-size: 23px;
+    opacity: 1;
+    text-align: left; 
+    text-align: justify;
+}
+
+.intro2 {
+    width: 90%;
+    height: 100%;
+    color: #fff;
+    position: absolute;
+    top: 1720px;
+    left: 70px;
+    font-size: 23px;
+    opacity: 1;
+    text-align: left; 
+    text-align: justify;
+}
+
+.intro3 {
+    width: 90%;
+    height: 100%;
+    color: #fff;
+    position: absolute;
+    top: 1900px;
+    left: 70px;
+    font-size: 23px;
+    opacity: 1;
+    text-align: left; 
+    text-align: justify;
+}
+
+.realistic-marker-highlight{
+    position: absolute;
+    color: #fdfdfd;
+    font-family: Libre Franklin;
+    font-size: 38px;
+    margin-left: 15px;
+    top: 730px;
+    left: 590px;
+    opacity: 1;
+    text-align: left; 
+    font-family: Quantico;
+    font-weight: Regular;
+}
+.realistic-marker-highlight:before{
+    content:"";
+    background-color:rgba(64, 104, 59, 0.81);
+    width:100%;
+    height:1.3em;
+    position:absolute;
+    z-index:-1;
+    filter:url(#marker-shape);
+    left:-0.25em;
+    top:-0.05em;
+    padding:0 0.30em;
+}
+
+.realistic-marker-highlight1{
+    position: absolute;
+    color: #fdfdfd;
+    font-family: Libre Franklin;
+    font-size: 38px;
+    margin-left: 15px;
+    top: 1350px;
+    left: 630px;
+    opacity: 1;
+    text-align: left; 
+    font-family: Quantico;
+    font-weight: Regular;
+}
+.realistic-marker-highlight1:before{
+    content:"";
+    background-color:rgba(64, 104, 59, 0.81);
+    width:100%;
+    height:1.3em;
+    position:absolute;
+    z-index:-1;
+    filter:url(#marker-shape);
+    left:-0.25em;
+    top:-0.05em;
+    padding:0 0.30em;
+}
+
+</style>
+
+
+
+
+</html>

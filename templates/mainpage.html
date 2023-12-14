@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Fanwood+Text&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Rufina&display=swap" rel="stylesheet" />
+    <title>The Entity</title>
+    <link rel="icon" href="logoicon.png" type="image/icon type">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='trail_hackathon.css') }}">
+</head>
+<body>
+    <div class="headerstyle"></div>
+    <div class="logo"></div>
+    <span class="topic">Identification of Different Medicine Plants</span>
+    <div class="container">
+    <span class="realistic-marker-highlight">ABOUT</span>
+    <svg xmlns="//www.w3.org/2000/svg" version="1.1" class="svg-filters" style="display:none;">
+        <defs>
+          <filter id="marker-shape">
+            <feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+          </filter>
+        </defs>
+      </svg>
+    <h5>The system employs deep learning to recognize and classify medicinal plants and raw materials from images.</h5>
+    <h5 class="user_friendly">A web-based interface simplifies the user experience, making it accessible to a wide range of users.</h5> 
+    <h5 class="user1_friendly">The use of the MobileNet architecture ensures both speed and accuracy in classification.</h5> 
+    
+
+    </div>
+    
+    
+
+    <div class="sihlogo"></div>
+    <h3>Identification of Different Medicinal Plants/Raw materials through Image Processing Using Machine Learning Algorithms</h3>
+    <h1>Image Upload and Prediction</h1>
+    <form id="upload-form" method="post" action="/upload" enctype="multipart/form-data">
+    <label for="file-input">Choose a File</label>
+    <input type="file" name ='imagefile' id="file-input" accept="image/*">
+
+    <img id="selected-image" name = 'imagefile'>
+    <button id="predict-button" type ="submit">Predict</button>
+
+    <section>
+    <h2>Prediction Result</h2>
+    <p>Predicted Class: {{ predicted_class_name }}</p>
+    </section>
+
+</body>
+    
+<style>
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #80a656;
+  background-image: url("static/bgimage (2).jpg"); /* Set your background image here */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+
+.headerstyle{
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(rgb(37, 89, 52), rgba(107,199,132,1));
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  
+  .logo {
+    width: 200px;
+    height: 60px;
+    background: url("static/logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 20px;
+    left: 48px;
+    overflow: hidden;
+  }
+
+  .container {
+    background: rgba(81, 123, 76, 0.81);
+    width: 910px;
+    padding: 120px;
+    position: absolute;
+    border-radius: 10px;
+    text-align: center;
+    top: 200px;
+    left: 150px;
+  }
+  
+  
+  
+  
+  .topic {
+    width: 100%;
+    color: rgba(34,79,52,1);
+    position: absolute;
+    top: 25px;
+    left: 340px;
+    font-family: Rufina;
+    font-weight: Bold;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+  }
+
+  .realistic-marker-highlight{
+  position: absolute;
+  color: #fdfdfd;
+  font-family: Libre Franklin;
+  font-size: 32px;
+  margin-left: 15px;
+  top: 40px;
+  left: 510px;
+}
+.realistic-marker-highlight:before{
+  content:"";
+  background-color:#ffffff;
+  width:100%;
+  height:1.3em;
+  position:absolute;
+  z-index:-1;
+  filter:url(#marker-shape);
+  left:-0.25em;
+  top:-0.05em;
+  padding:0 0.30em;
+}
+
+
+h5 {
+    font-size: 25px;
+    position: absolute;
+    color: #fff;
+    font-weight: 500;
+    font-family: Libre Franklin;
+    top: 50px;
+    left: 35px;
+    width: auto;
+}
+
+
+.user_friendly {
+    font-size: 25px;
+    position: absolute;
+    color: #fff;
+    font-family: Libre Franklin;
+    top: 90px;
+    left: 60px;
+    width: auto;
+    margin-left: 15px;
+}
+
+.user1_friendly {
+    font-size: 25px;
+    position: absolute;
+    color: #fff;
+    font-family: Libre Franklin;
+    top: 130px;
+    left: 110px;
+    width: auto;
+    margin-left: 15px;
+}
+
+  .sihlogo {
+    width: 140px;
+    height: 80px;
+    background: url("static/SIH.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 8px;
+    right: 48px;
+    overflow: hidden;
+  }
+
+
+  h3 {
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    font-family: Quantico;
+    font-weight: Regular;
+    font-size: 27px;
+    opacity: 1;
+    text-align: left;
+
+  }
+
+
+
+h1 {
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 460px;
+    left: 500px;
+    font-family: Quantico;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+    
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    display: block;
+    background-color: rgba(64, 125, 35, 0.708);
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #80a656;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    max-width: 100px;
+    font-size: 16px;
+    top: 540px;
+    left: 670px;
+    position: absolute;
+
+}
+
+#selected-image {
+position: absolute;
+top: 630px; /* Adjust this value according to your needs */
+left: 470px; /* Adjust this value according to your needs */
+max-width: 100%;
+max-height: 400px;
+display: none;
+margin-left: auto;
+margin-right: auto;
+object-position: center top; 
+border-radius: 15px;
+}
+
+#predict-button {
+    display: none;
+    background-color: rgba(64, 125, 35, 0.708);
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #80a656;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    max-width: 100px;
+    font-size: 16px;
+    top: 1050px;
+    left: 695px;
+    position: absolute;
+    
+}
+
+
+
+    </style>
+
+    <script>
+        // Function to display the selected image
+        document.getElementById("file-input").addEventListener("change", function () {
+            const fileInput = document.getElementById("file-input");
+            const selectedImage = document.getElementById("selected-image");
+            const predictButton = document.getElementById("predict-button");
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const imageUrl = URL.createObjectURL(file);
+
+                selectedImage.src = imageUrl;
+                selectedImage.style.display = "block";
+                predictButton.style.display = "block";
+            }
+        });
+
+        // Function for prediction (replace with your prediction logic)
+        function predictImage(model) {
+            const selectedImage = document.getElementById("selected-image");
+            const predictionResult = document.getElementById("prediction-result");
+    
+            // Create a FormData object to send the image to the server
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+    
+            // Send the image to the server for prediction
+            fetch("/upload", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                const predictedClass = data.predicted_class;
+                predictionResult.textContent = `Predicted Class: ${predictedClass}`;
+                predictionResult.style.display = "block";
+            })
+            .catch(error => {
+                console.error("Prediction error:", error);
+            });
+        }
+        
+    </script>
+
+
+
+</html>
+
+

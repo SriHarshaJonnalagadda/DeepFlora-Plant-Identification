@@ -1,0 +1,108 @@
+<!---<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p>The predicted class is: <strong>{{ predicted_class_name }}</strong></p>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-image: url("static/bgimage (2).jpg");
+            background-size: cover;
+
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            height: 100%;
+        }
+
+        .container {
+            background-color: #cddfce;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        #goback{
+            background-color: rgba(64, 125, 35, 0.708);
+            color: #fff;
+            padding: 10px 20px;
+            border: 1px solid #80a656;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+            max-width: 100px;
+            font-size: 16px;
+        }
+        #border {
+            border-radius: 18px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <img src="{{ url_for('static', filename='uploaded_images/' + filename) }}" alt="Uploaded Image" style="max-width: 100%" id="border">
+
+        <p>The predicted class is: <strong>{{ predicted_class_name }}</strong></p>
+        <br><br>
+        <p>Scientific Name: <strong>{{ scientific_name }}</strong></p>
+        <p>Description: <strong>{{ description }}</strong></p>
+        <p>Benifits: <strong>{{ benifits }}</strong></p>
+        <a href="{{ url_for('index') }}"  id="goback">Go Back</a>
+    </div>
+</body>
+</html>
+
+
+
+

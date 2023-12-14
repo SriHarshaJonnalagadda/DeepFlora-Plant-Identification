@@ -1,0 +1,130 @@
+body {
+    background-image: url(bgimage\ \(2\).jpg); /* Set your background image here */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+
+.headerstyle{
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(rgb(37, 89, 52), rgba(107,199,132,1));
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  
+  .logo {
+    width: 200px;
+    height: 60px;
+    background: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 20px;
+    left: 48px;
+    overflow: hidden;
+  }
+  
+  
+  
+  
+  .topic {
+    width: 100%;
+    color: rgba(34,79,52,1);
+    position: absolute;
+    top: 25px;
+    left: 340px;
+    font-family: Rufina;
+    font-weight: Bold;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+  }
+
+  .sihlogo {
+    width: 140px;
+    height: 80px;
+    background: url("SIH.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 8px;
+    right: 48px;
+    overflow: hidden;
+  }
+
+
+
+h1 {
+    width: 100%;
+    color: rgba(224, 230, 220, 0.866);
+    position: absolute;
+    top: 90px;
+    left: 375px;
+    font-family: Quantico;
+    font-weight: Regular;
+    font-size: 55px;
+    opacity: 1;
+    text-align: left;
+    
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    display: block;
+    background-color: rgba(64, 125, 35, 0.708);
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #80a656;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    max-width: 100px;
+    font-size: 16px;
+    top: 190px;
+    left: 650px;
+    position: absolute;
+
+}
+
+#selected-image {
+position: absolute;
+top: 270px; /* Adjust this value according to your needs */
+left: 450px; /* Adjust this value according to your needs */
+max-width: 100%;
+max-height: 400px;
+display: none;
+margin-left: auto;
+margin-right: auto;
+object-position: center top; 
+}
+
+#predict-button {
+    display: none;
+    background-color: rgba(64, 125, 35, 0.708);
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #80a656;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    max-width: 100px;
+    font-size: 16px;
+    top: 675px;
+    left: 670px;
+    position: absolute;
+    
+}

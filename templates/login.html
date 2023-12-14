@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Entity</title>
+    <link rel="icon" href="logoicon.png" type="image/icon type">
+    <link rel="stylesheet" href="static/login.css">	
+    <link rel="stylesheet" href="templates/new_hackathon1.html">
+</head>
+<body>
+    <div class="headerstyle"></div>
+    <div class="logo"></div>
+    <div class="sihlogo"></div>
+    <div class="container">
+
+        <form> 
+            <h1>Login</h1>
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username"  name ="username" placeholder="Enter your username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password"  name ="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="loginbtn" onclick="func()" >Log in</button>
+            <div class="signup">
+                Don't have any account?
+                <br>
+                <a href="#">Sign Up</a>
+            </div>
+
+        </form>
+    </div>
+    <section>
+        <script>
+            function func(){
+                var username = document.getElementById("username").value;
+                var pass = document.getElementById("password").value;
+                if(username == 'The Entity' && pass == '123'){
+                    window.location.assign("new_hackathon1.html")
+                    alert("Successfully Login");
+                }
+                else{
+                    alert("Wrong Entry invalid");
+                    return;
+                }
+            }
+        </script>
+    </section>
+</body>
+</html>
